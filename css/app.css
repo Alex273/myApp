@@ -1,0 +1,37 @@
+
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 20px;
+}
+
+.main-area-categories {
+  background: #c3c3c3;  
+  border-radius: 4px;
+  min-height: 500px;
+}
+
+.main-area-mylist {
+  background: #c3c3c3;  
+  border-radius: 4px;
+  min-height: 100px;
+}
+
+.main-area-archive {
+  background: #c3c3c3;  
+  border-radius: 4px;
+  min-height: 250px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.categories-list {
+  margin-top: 20px;
+  background: #fff;  
+  border-radius: 4px;
+  min-height: 400px;
+}
