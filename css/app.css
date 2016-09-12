@@ -3,8 +3,19 @@ html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
+
 body {
   padding-top: 20px;
+}
+
+.main-nav {
+
+}
+
+.link-back {
+margin:15px;
+border: 1px solid #9c9c9c;
+border-radius: 3px;
 }
 
 .main-area-categories {
@@ -22,7 +33,7 @@ body {
 .main-area-archive {
   background: #c3c3c3;  
   border-radius: 4px;
-  min-height: 250px;
+  min-height: 450px;
 }
 
 .logo {
@@ -35,3 +46,39 @@ body {
   border-radius: 4px;
   min-height: 400px;
 }
+
+.checkbox-list {
+margin-top: 15px !important;
+margin-bottom: 10px !important;
+}
+
+.product-name {
+  display: inline-block;
+  float: left;
+  }
+
+  .product-in-list {
+    
+  }
+
+  .category {
+    text-align: left;
+    font-size: 20px;
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 5px !important;
+  }
+
+  .archive-list {
+    margin-top: 20px;
+  background: #fff;  
+  border-radius: 4px;
+  min-height: 400px;
+  }
+
+  .form-control {
+    width:150px;
+  }

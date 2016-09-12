@@ -1,9 +1,8 @@
 'use strict';
 
-/* Controllers */
 var myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
 
-myApp.config(['$routeProvider','$locationProvider', function($routeProvide, $locationProvider) {
+ myApp.config(['$routeProvider','$locationProvider', function($routeProvide, $locationProvider) {
 	$locationProvider.html5Mode({
 		enabled:true,
 		requireBase: false
@@ -16,94 +15,104 @@ myApp.config(['$routeProvider','$locationProvider', function($routeProvide, $loc
 	})
 	.when('/mylist',{
 		templateUrl:'template/mylist.html',
-		controller:'AboutCtrl'
+		controller:'MyListCtrl'
 	})
 	.when('/archive',{
 		templateUrl:'template/archive.html',
-		controller:'ContactCtrl'
+		controller:'ArchiveCtrl'
 	})
-	.when('/phones/:phoneId',{
-		templateUrl:'template/phone-detail.html',
-		controller:'PhoneDetailCtrl'
+	.when('/categories/bread',{
+		templateUrl:'template/bread.html',
+		controller:'BreadListCtrl'
 	})
-	.otherwise({
+  .when('/categories/meat',{
+    templateUrl:'template/meat.html',
+    controller:'MeatListCtrl'
+  })
+  .when('/categories/milk',{
+    templateUrl:'template/milk.html',
+    controller:'MilkListCtrl'
+  })
+  .when('/categories/fruits',{
+    templateUrl:'template/fruits.html',
+    controller:'FruitsListCtrl'
+  })
+
+  .otherwise({
 		redirectTo:'/'
 	})
 }]);
 
-/* Factory */
-myApp.factory('Phone', [
-  '$resource', function($resource) {
-    return $resource('phones/:phoneId.:format', {
-      phoneId: 'phones',
-      format: 'json',
-      apiKey: 'someKeyThis'
-      /* http://localhost:8888/phones/phones.json?apiKey=someKeyThis */
-    }, {
-      // action: {method: <?>, params: <?>, isArray: <?>, ...}
-      update: {method: 'PUT', params: {phoneId: '@phone'}, isArray: true}
-    });
-    //Phone.update(params, successcb, errorcb);
-  }
-]);
 
 
-/* Filter */
-myApp.filter('checkmark', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
-  }
-});
 
-//MyAppListCtrl Controller
-myApp.controller('MyAppListCtrl',[
-  '$scope','$http', '$location', 'Phone',
-  function($scope, $http, $location, Phone) {
+//main Controller
+myApp.controller('MyAppListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
+  
+  console.log('$location.url() - ', $location.url());  
+  $http.get('categories/categories.json').success(function(data, status, headers, config) { 
+  $scope.categories = data;
+  });
+                          
+}]);
 
+//bread Controller
+myApp.controller('BreadListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
+  
+  $http.get('categories/bread.json').success(function(data, status, headers, config) { 
+  $scope.bread = data;
+  });
    
-     Phone.query({phoneId: 'phones'}, function(data) {
-      $scope.phones = data;
-    });
-   
+  //$scope.back=function() {    
+  //$window.history.back(); 
+   //} 
 
-    //Phone.query(params, successcb, errorcb)
+}]);
 
-    //Phone.get(params, successcb, errorcb)
+//meat Controller
+myApp.controller('MeatListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
+  
+  $http.get('categories/meat.json').success(function(data, status, headers, config) { 
+  $scope.meat = data;
+  });
+                          
+}]);
 
-    //Phone.save(params, payloadData, successcb, errorcb)
+//milk Controller
+myApp.controller('MilkListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
+  
+  $http.get('categories/milk.json').success(function(data, status, headers, config) { 
+  $scope.milk = data;
+  });
+                          
+}]);
 
-    //Phone.delete(params, successcb, errorcb)
+//fruits Controller
+myApp.controller('FruitsListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
+  
+  $http.get('categories/fruits.json').success(function(data, status, headers, config) { 
+  $scope.fruits = data;
+  });
+                          
+}]);
 
-  }
-]);
-
-//About Controller
-myApp.controller('AboutCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
+//mylist Controller
+myApp.controller('MyListCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
 	
 }]);
 
-//Contact Controller
-myApp.controller('ContactCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
+//archive Controller
+myApp.controller('ArchiveCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
 	
 }]);
 
-/* Phone Detail Controller */
-myApp.controller('PhoneDetailCtrl',[
-  '$scope','$http', '$location', '$routeParams', 'Phone',
-  function($scope, $http, $location, $routeParams, Phone) {
-    $scope.phoneId = $routeParams.phoneId;
 
-    Phone.get({phoneId: $routeParams.phoneId}, function(data) {
-      $scope.phone = data;
-      $scope.mainImageUrl = data.images[0];
-      //data.$save();
-    });
-
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
+//product Controller
+myApp.controller('ProductListCtrl',[ '$scope','$http', '$location', '$routeParams', 'Product',
+  function($scope, $http, $location, $routeParams, Product) {
+    $scope.productId = $routeParams.productId; 
 
   }
-]);
+]);    
 
 

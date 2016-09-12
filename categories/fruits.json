@@ -1,0 +1,22 @@
+[
+{  
+	"id": "oranges", 
+	"name":"Апельсины"
+},	
+{  
+	"id": "bananas",
+   "name":"Бананы" 
+},
+{  
+	"id": "lemons",
+	"name":"Лимоны"
+},	
+{  
+	"id": "apples",
+	"name":"Яблоки"
+},	
+{  
+	"id": "pears",
+	"name":"Груши"
+}
+]

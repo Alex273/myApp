@@ -1,0 +1,18 @@
+[
+{  
+	"id": "milk", 
+	"name":"Молоко"
+},	
+{  
+	"id": "sour_cream",
+   "name":"Сметана" 
+},	
+{  
+	"id": "kefir",
+	"name":"Кефир"
+},	
+{  
+	"id": "cottage_cheese",
+	"name":"Творог"
+}
+]

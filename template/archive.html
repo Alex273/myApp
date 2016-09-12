@@ -1,15 +1,57 @@
 <!doctype html>
 <html lang="ru">
-<head>  
+<head> 
 </head>
 <body>
 
  <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
       <div class="main-area-archive">
-      
+
+
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+          <div class="archive-list">
+
+         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+          <a ng-href="/" back-button class="link-back">
+          <span class="icon icon-arrow-left">&larr;Назад</span>
+          </a>          
+          
+          <h4>Выберите период покупок:</h4>
+          
+          <div class="form-group">
+               <label for="dateFrom">Дата от:</label>
+               <input type="text" class="form-control" id="dateFrom" placeholder="Дата">
+              </div>
+ 
+          <div class="form-group">
+                <label for="dateTo">до:</label>
+                <input type="text" class="form-control" id="dateTo" placeholder="Дата">
+          </div>
+          <input type="submit" value="Получить список">
+
+         </div>
+         </div>
+      </div>
+    
+
+       </div>
      </div>
   </div>
+  <script>    
+  $(function(){
+      $('#dateFrom').datepicker({
+        inline: true,       
+        showOtherMonths: true,        
+        dayNamesMin: [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ],        
+      });
+       $('#dateTo').datepicker({
+        inline: true,       
+        showOtherMonths: true,        
+        dayNamesMin: [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ],        
+      });
+    });
+</script>
 
 </body>
 </html>
