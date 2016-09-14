@@ -6,9 +6,7 @@
         <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
           <div class="categories-list">
           
-          <a ng-href="/" back-button class="link-back">
-          <span class="icon icon-arrow-left">&larr;Назад</span>
-          </a>
+          <input type="button" class="back-button" ng-click="goBack()" value="Назад" />
 
           <div class="product-in-list" ng-repeat="product in bread" >
 
@@ -17,11 +15,13 @@
           </div>
 
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <input type="checkbox" class="checkbox-list" value={{product.name}} />        
+          <input type="checkbox" ng-model="product.selected" class="checkbox-list" ng-change="add(product)" />        
+          </div>      
+        
           </div>
 
-       </div>
-      </div>
-    </div>
+          </div>
    </div>
+  </div>
+  </div>
   </div>

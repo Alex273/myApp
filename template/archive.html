@@ -13,9 +13,7 @@
           <div class="archive-list">
 
          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
-          <a ng-href="/" back-button class="link-back">
-          <span class="icon icon-arrow-left">&larr;Назад</span>
-          </a>          
+          <input type="button" class="back-button" ng-click="goBack()" value="Назад" />          
           
           <h4>Выберите период покупок:</h4>
           
@@ -28,12 +26,18 @@
                 <label for="dateTo">до:</label>
                 <input type="text" class="form-control" id="dateTo" placeholder="Дата">
           </div>
-          <input type="submit" value="Получить список">
+          <input type="button" ng-click="getData()" value="Получить список" />
 
          </div>
          </div>
       </div>
     
+<table>
+  <tr ng-repeat="x in products">
+    <td>{{ x.name }}</td>
+    <td>{{ x.id }}</td>
+  </tr>
+</table>
 
        </div>
      </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" ng-app="myApp">
+<html lang="ru" data-ng-app="myApp">
 <head> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -7,18 +7,15 @@
   <title>My App</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
-
-  <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>  
-  
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-     
+  <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>   
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">     
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>  
-    
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>     
   <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="js/jquery/jquery-ui-1.8.18.custom.min.js"></script> 
+  <script type="text/javascript" src="js/lib/ngStorage.min.js"></script> 
 </head>
-<body ng-controller="MyAppListCtrl">
+<body data-ng-controller="MyAppListCtrl">
 
 <div class="row row-offcanvas row-offcanvas-right">
    <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 col-lg-2 col-lg-offset-5">
@@ -28,12 +25,10 @@
 
 <div class="row">
  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-  <nav class="navbar navbar-inverse">
-   <div class="container">
-    
+  <nav class="navbar navbar-inverse">    
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-    <div id="navbar" class="collapse navbar-collapse">
+    <div id="navbar" class=" navbar-collapse">
       <ul class="nav navbar-nav main-nav">
         <li class="active"><a href="/">Создать список</a></li>
         <li><a href="/mylist">Мой список</a></li>
@@ -42,7 +37,7 @@
     </div>
  </div>
 
-  </div>
+  
  </nav>
  </div>
 </div>

@@ -12,7 +12,7 @@ body {
 
 }
 
-.link-back {
+.back-button {
 margin:15px;
 border: 1px solid #9c9c9c;
 border-radius: 3px;
@@ -27,7 +27,7 @@ border-radius: 3px;
 .main-area-mylist {
   background: #c3c3c3;  
   border-radius: 4px;
-  min-height: 100px;
+  min-height: 350px;
 }
 
 .main-area-archive {
@@ -42,7 +42,7 @@ border-radius: 3px;
 
 .categories-list {
   margin-top: 20px;
-  background: #fff;  
+  background: #f7f7f7;  
   border-radius: 4px;
   min-height: 400px;
 }
@@ -58,8 +58,14 @@ margin-bottom: 10px !important;
   }
 
   .product-in-list {
-    
+    background: aqua !important;
   }
+
+ .products-list {
+  margin-top: 20px;
+  background: #fff;
+  min-height: 250px;
+ }
 
   .category {
     text-align: left;
@@ -72,6 +78,10 @@ margin-bottom: 10px !important;
     padding: 5px 5px !important;
   }
 
+ .product {
+  
+ }
+
   .archive-list {
     margin-top: 20px;
   background: #fff;  
@@ -82,3 +92,21 @@ margin-bottom: 10px !important;
   .form-control {
     width:150px;
   }
+
+  .delete-button {
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+    
+  }
+
+.message {
+  font-size: 20px;
+ text-align: center
+}
+
+  @media (min-width: 992px) {
+  .navbar-nav > li {
+    float: left;
+    font-size: 15px !important
+  }
+}
