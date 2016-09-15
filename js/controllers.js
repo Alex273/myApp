@@ -37,7 +37,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
     templateUrl:'template/fruits.html',
     controller:'FruitsListCtrl'
   })
-
   .otherwise({
 		redirectTo:'/'
 	})
@@ -51,7 +50,6 @@ myApp.controller('MyAppListCtrl', [ '$scope', '$http', '$location', function($sc
   });
 
 }]);
-
 
 //bread Controller
 myApp.controller('BreadListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
@@ -72,11 +70,7 @@ myApp.controller('BreadListCtrl', [ '$scope', '$http', '$location', function($sc
 
  $scope.goBack = function() {
   window.history.back();
- };
-   //$scope.back=function() {    
-  //$window.history.back(); 
-   //} 
-
+ };   
 }]);
 
 //meat Controller
@@ -150,7 +144,6 @@ myApp.controller('FruitsListCtrl', [ '$scope', '$http', '$location', function($s
 
 //mylist Controller
 myApp.controller('MyListCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
-
 $scope.goBack = function() {
   window.history.back();
  };
@@ -159,42 +152,13 @@ if (sessionStorage.length == 0) {
 $scope.message = 'Ваш список пуст!';
 }
 
-$scope.showAll = function(){
-  console.log(sessionStorage);
-  };
-
 $scope.clearAll = function(){
  sessionStorage.clear();
     console.log(sessionStorage);
   };
 
-var dataList =[];
-var arr =[];
-for (var i=0; i<sessionStorage.length; i++) {
-  var myKey = sessionStorage.key(i);    
-  arr.push(myKey);  
-}
-
-
-$scope.categoryList = arr;
-console.log(arr);
-
-/*
-var x = arr;
-$scope.dataList = sessionStorage.getItem('bread');
-$scope.productList = JSON.parse($scope.dataList);  */
-
-/*$scope.del = function(){ 
-angular.forEach($scope.prod, function(prod) {
-    if(prod.clicked) selectedProducts.push(product);
-
-    sessionStorage.clear();
-    console.log(sessionStorage);
-  });   */
-
 $scope.dataBread = sessionStorage.getItem('bread');
 $scope.breadList = JSON.parse($scope.dataBread);
-//$scope.breadCategory = 'Хлеб';
 
 $scope.dataMeat = sessionStorage.getItem('meat');
 $scope.meatList = JSON.parse($scope.dataMeat);
@@ -205,19 +169,61 @@ $scope.milkList = JSON.parse($scope.dataMilk);
 $scope.dataFruits = sessionStorage.getItem('fruits');
 $scope.fruitsList = JSON.parse($scope.dataFruits);
 
+
+$scope.del = function(prod) {
+var value = prod.name;
+
+var detect = function(key, variable) {
+var arr = variable,
+ category = key;
+
+ for (var i=0; i<arr.length; i++) {
+  if (arr[i].name == value) {
+     arr.splice(i,1);
+  }   
+ }
+
+if (arr.length == 0) {
+  sessionStorage.removeItem(category);
+} else {
+var newValue = arr;
+sessionStorage.setItem(category, JSON.stringify(newValue));
+ }
+
+}
+
+if (prod.category == 'bread') {
+  detect('bread', $scope.breadList);
+}
+
+switch (prod.category) {
+  case 'bread':
+    detect('bread', $scope.breadList);
+    break;
+  case 'meat':
+    detect('meat',$scope.meatList);
+    break;
+  case 'milk':
+   detect('milk',$scope.milkList);
+    break;
+  case 'fruits':
+   detect('fruits',$scope.fruitsList);
+   break;
+ }
+};
+
 }]);
 
 //archive Controller
 myApp.controller('ArchiveCtrl', ['$scope','$http','$location', function($scope, $http, $location) {
-
 $scope.goBack = function() {
   window.history.back();
  };
-
 $scope.getData = function(){
- $scope.products = sessionStorage.getItem('fruits');
-  };
- 
+ $scope.dataFruits = sessionStorage.getItem('bread');
+ $scope.products = JSON.parse($scope.dataFruits);
+  //console.log($scope.products);
+  }; 
 	
 }]);
 

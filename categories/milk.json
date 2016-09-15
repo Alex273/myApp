@@ -1,18 +1,22 @@
 [
 {  
 	"id": "milk", 
+	"category": "milk",
 	"name":"Молоко"
 },	
 {  
 	"id": "sour_cream",
-   "name":"Сметана" 
+	"category": "milk",
+    "name":"Сметана" 
 },	
 {  
 	"id": "kefir",
+	"category": "milk",
 	"name":"Кефир"
 },	
 {  
 	"id": "cottage_cheese",
+	"category": "milk",
 	"name":"Творог"
 }
 ]

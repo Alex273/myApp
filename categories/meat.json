@@ -1,18 +1,22 @@
 [
 {  
 	"id": "pork", 
+	"category": "meat",
 	"name":"Свинина"
 },	
 {  
 	"id": "beef",
+	"category": "meat",
    "name":"Говядина" 
 },	
 {  
 	"id": "chicken",
+	"category": "meat",
 	"name":"Курица"
 },	
 {  
 	"id": "turkey",
+	"category": "meat",
 	"name": "Индейка"
 }
 ]

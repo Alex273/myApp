@@ -5,60 +5,71 @@
 <body>
 
  <div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <div class="main-area-mylist">
-      
-      
-<input type="button" value="Вывести sessionstorage" ng-click="showAll()"/>
-<input type="button" value="Очистить sessionstorage" ng-click="clearAll()"/>
- 
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+      <div class="main-area-mylist clearfix">
+
      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-          <div class="products-list">
+          <div class="products-list clearfix">
+          
+          <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
           <input type="button" class="back-button" ng-click="goBack()" value="Назад" />          
-                     
+          </div> 
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+          <input type="button" class="save-button" ng-click="saveData()" value="Сохранить в архив" />          
+          </div>
+           </div> 
+
           <div class="message">{{message}}</div>
 
-          <div class="product-in-list" ng-repeat="prod in breadList" >
-          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 product">          
+          <div ng-repeat="prod in breadList" >
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-in-list"> 
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">          
           <h4 class="product-name">{{prod.name}}</h4>          
           </div>  
 
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product">
-          <input type="button" class="delete-button" value="убрать" ng-click="del(product)" />        
+          <input type="button" class="delete-button" value="убрать" ng-click="del(prod)" />        
+          </div>
           </div>
           </div>
 
-          <div class="product-in-list" ng-repeat="prod in meatList" >
-          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 product">           
+
+          <div ng-repeat="prod in meatList" >
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-in-list">  
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">           
           <h4 class="product-name">{{prod.name}}</h4>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product">
-          <input type="button" class="delete-button" value="убрать" />        
+          <input type="button" class="delete-button" value="убрать" ng-click="del(prod)"/>        
           </div>  
           </div>
+          </div>
 
-          <div class="product-in-list" ng-repeat="prod in milkList" >
-          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 product">          
+          <div ng-repeat="prod in milkList" >
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-in-list"> 
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">          
           <h4 class="product-name">{{prod.name}}</h4>
           </div>  
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product">
-          <input type="button" class="delete-button" value="убрать" />        
+          <input type="button" class="delete-button" value="убрать" ng-click="del(prod)"/>        
+          </div>
           </div>
           </div>
 
-           <div class="product-in-list" ng-repeat="prod in fruitsList" >
-         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 product">           
+          <div ng-repeat="prod in fruitsList" >
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-in-list"> 
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">           
           <h4 class="product-name">{{prod.name}}</h4>
           </div> 
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product">
-          <input type="button" class="delete-button" value="убрать" />        
+          <input type="button" class="delete-button" value="убрать" ng-click="del(prod)"/>        
           </div> 
+          </div>
           </div>
         
          </div>
     </div>
-
-
 
      </div>  
   </div>

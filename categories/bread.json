@@ -1,18 +1,22 @@
 [
 {  
 	"id": "black_bread", 	
+	"category": "bread",
 	"name":"Черный хлеб"
 },	
 {  
-	"id": "white_bread",	
+	"id": "white_bread",
+	"category": "bread",	
    "name":"Белый хлеб" 
 },	
 {  
-	"id": "loaf",	
+	"id": "loaf",
+	"category": "bread",	
 	"name":"Батон"
 },	
 {  
 	"id": "bun",	
+	"category": "bread",
 	"name":"Булочки"
 }
 ]
