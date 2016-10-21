@@ -40,7 +40,8 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
   .otherwise({
 		redirectTo:'/'
 	})
-}]);
+}]);   
+
 
 //main Controller
 myApp.controller('MyAppListCtrl', [ '$scope', '$http', '$location', function($scope, $http, $location) {    
